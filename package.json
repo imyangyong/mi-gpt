@@ -23,9 +23,8 @@
     "home-assistant"
   ],
   "scripts": {
-    "start": "node ./app.js",
-    "dev": "node --env-file=.env ./app.js",
-    "build": "npx -y prisma generate && tsup",
+    "dev": "unbuild --stub && node --env-file=.env ./app.js",
+    "build": "npx -y prisma generate && unbuild",
     "db:gen": "npx -y prisma migrate dev --name init",
     "db:reset": "rm -f .mi.json .bot.json prisma/app.db prisma/app.db-journal",
     "postinstall": "npx -y prisma migrate dev --name hello"
@@ -41,9 +40,9 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.4.9",
-    "tsup": "^8.0.1",
     "tsx": "^4.11.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "unbuild": "^2.0.0"
   },
   "engines": {
     "node": ">=16"

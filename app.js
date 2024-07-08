@@ -1,5 +1,5 @@
 import config from "./.migpt.js";
-import { MiGPT } from "./dist/index.cjs";
+import { MiGPT } from "./dist/index.mjs";
 
 async function main() {
   const client = MiGPT.create(config);
